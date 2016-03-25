@@ -187,6 +187,8 @@ public class Calculator {
                 result = opSub(lvalue,rvalue);
                 break;
             case '/':
+                if(rvalue.getChar() == '.' && rvalue.getInt() == 0)
+                    throw new ArithmeticException("Divide by Zero!" + rvalue.getInt());
                 result = opDiv(lvalue,rvalue);
                 break;
             case '*':
